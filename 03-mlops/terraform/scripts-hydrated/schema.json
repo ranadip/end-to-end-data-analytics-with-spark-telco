@@ -1,0 +1,86 @@
+{
+    "input": [ 
+    {
+        "name":"gender",
+        "type": "STRING"
+    },
+    {
+        "name":"senior_citizen",
+        "type": "LONG"
+    },
+    {
+        "name":"partner",
+        "type": "STRING"
+    },
+    {
+        "name":"dependents",
+        "type": "STRING"
+    },
+    {        
+        "name":"phone_service",
+        "type": "STRING"
+    },
+    {        
+        "name":"multiple_lines",
+        "type": "STRING"
+    },
+    {        
+        "name":"internet_service",
+        "type": "STRING"
+    },
+    {        
+        "name":"online_security",
+        "type": "STRING"
+    },
+    {
+        "name":"online_backup",
+        "type": "STRING"
+    },
+    {
+        "name":"device_protection",
+        "type": "STRING"
+    },
+    {
+        "name":"tech_support",
+        "type": "STRING"
+    },
+    {
+        "name":"streaming_tv",
+        "type": "STRING"
+    },
+    {
+        "name":"streaming_movies",
+        "type": "STRING"
+    },
+    {
+        "name":"contract",
+        "type": "STRING"
+    },
+    {
+        "name":"paperless_billing",
+        "type": "STRING"
+    },
+    {
+        "name":"payment_method",
+        "type": "STRING"
+    },
+    {
+        "name":"monthly_charges",
+        "type": "FLOAT"
+    },
+    {
+        "name":"total_charges",
+        "type": "FLOAT"
+    },
+    {
+        "name":"churn",
+        "type": "STRING"
+    }
+],
+"output": [
+  {
+    "name": "prediction",
+    "type": "DOUBLE"
+  }
+        ]
+}
