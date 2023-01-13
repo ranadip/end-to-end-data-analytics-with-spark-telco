@@ -1,4 +1,4 @@
-# End to end data analytics with SPARK
+# End to end data analytics with SPARK (Telco edition)
 
 ## Introduction
 
