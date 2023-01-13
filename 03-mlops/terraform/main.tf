@@ -47,6 +47,7 @@ SPARK_CONTAINER_IMG_TAG     = "1.0.0"
 dpms_nm                     = "s8s-dpms-${local.project_id}"
 bq_connector_jar_gcs_uri    = "gs://spark-lib/bigquery/spark-bigquery-with-dependencies_2.12-0.22.2.jar"
 cloud_scheduler_timezone    = "America/Chicago"
+is_out_qwiklabs             = true
 }
 
 
@@ -226,10 +227,11 @@ resource "time_sleep" "sleep_after_api_enabling" {
 
 
 /******************************************
- Prepare environment
+ Prepare environment (only Qwiklabs)
  *****************************************/
 
 resource "null_resource" "install_gcloud" {
+  count = local.is_out_qwiklabs ? 0 : 1
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = "rm -rf /root/google-cloud-sdk; curl https://sdk.cloud.google.com > install.sh; bash install.sh --disable-prompts; source /root/google-cloud-sdk/path.bash.inc"
@@ -240,6 +242,7 @@ resource "null_resource" "install_gcloud" {
 
 
 resource "null_resource" "install_docker" {
+  count = local.is_out_qwiklabs ? 0 : 1
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = "curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh"
@@ -249,6 +252,7 @@ resource "null_resource" "install_docker" {
 
 
 resource "null_resource" "install_wget" {
+  count = local.is_out_qwiklabs ? 0 : 1
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = "apt-get update &&  apt-get install wget"
