@@ -17,14 +17,22 @@ This repository contains a refactoring of [s8s-spark-ce-workshop](https://github
 
 The deployment is fully terraformed. For each lab and from a [Google Cloud Cloud Shell](https://cloud.google.com/shell) terminal logged as your admin user, execute the following commands:
 
+On the top of the Google Cloud console, ensure an existing project is selected. Then run the following commands:
+
+```console
+ACCOUNT=$(gcloud config get account --quiet)
+REGION=us-central1 # Change as needed
+ZONE=us-central1-a # change as needed
+```
+
 
 ```console
 ~$ cd <LAB_NAME>
 # e.g. where <LAB_NAME> is 01-data-engineering, 02-ml or 03-mlops
-~$ source local_project_launcher.sh <gcp_project_id> <gcp_region> <gcp_zone> <gcp_user_id>
+~$ ./local_project_launcher.sh ${GOOGLE_CLOUD_PROJECT} ${REGION} ${ZONE} ${ACCOUNT}
 ```
 
-Change `<gcp_project_id> <gcp_region> <gcp_zone> <gcp_user_id>` accordingly, for example:
+For example:
 
 ```console
 ~$ source local_project_launcher.sh ${GOOGLE_CLOUD_PROJECT} us-central1 us-central1-a velascoluis@google.com
