@@ -442,11 +442,11 @@ module "vpc_creation" {
  secondary_ranges = {
     "${local.spark_subnet_nm}" = [
       {
-        range_name    = "gke-us-central1-bchain-spark-ha-56a334a0-gke-pods-20f3b6bd"
+        range_name    = "gke-${local.location}-${local.project_id}-pods-1"
         ip_cidr_range = "10.168.128.0/17"
       },
       {
-        range_name    = "gke-us-central1-bchain-spark-ha-56a334a0-gke-services-20f3b6bd"
+        range_name    = "gke-${local.location}-${local.project_id}-services-1"
         ip_cidr_range = "10.169.0.0/22"
       },
     ]
