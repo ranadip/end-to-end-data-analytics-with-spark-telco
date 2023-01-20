@@ -27,7 +27,7 @@ The deployment is fully terraformed. For each lab and from a [Google Cloud Cloud
 Change `<gcp_project_id> <gcp_region> <gcp_zone> <gcp_user_id>` accordingly, for example:
 
 ```console
-~$ source local_project_launcher.sh ${GOOGLE_CLOUD_PROJECT} us-central1 us-central1-a velascoluis@google.com
+~$ ./local_project_launcher.sh ${GOOGLE_CLOUD_PROJECT} us-central1 us-central1-a velascoluis@google.com
 ```
 
 Follow instructions for each lab under `<LAB_NAME>/instructions/en.md` 
